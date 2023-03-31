@@ -3,8 +3,8 @@
 		{
 			"id": 1,
 			"name": "Name",
-			"year": "Year of production",
-			"country": "Country of origin",
+			"year": "2021",
+			"country": "USA",
 			"genre": "Genre",
 			"directors": ["dir1", "dir2", "dir3"],
 			"suggestedAge": 15,
@@ -13,8 +13,8 @@
 		{
 			"id": 2,
 			"name": "Name2",
-			"year": "Year of production2",
-			"country": "Country of origin2",
+			"year": "1970",
+			"country": "France",
 			"genre": "Genre2",
 			"directors": ["dir1", "dir2", "dir3", "dir4"],
 			"suggestedAge": 18,
@@ -23,8 +23,8 @@
 		{
 			"id": 3,
 			"name": "Name3",
-			"year": "Year of production3",
-			"country": "Country of origin3",
+			"year": "2005",
+			"country": "Poland",
 			"genre": "Genre3",
 			"directors": ["dir1"],
 			"suggestedAge": 12,

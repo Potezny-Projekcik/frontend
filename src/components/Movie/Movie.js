@@ -1,5 +1,5 @@
 import React from "react";
-import { Card, CardContent, Typography } from "@mui/material";
+import { Card, CardContent, CardHeader, Typography } from "@mui/material";
 import { useTranslation } from "react-i18next";
 
 function Movie({ movie }) {
@@ -7,10 +7,12 @@ function Movie({ movie }) {
 		movie;
 	const { t } = useTranslation("movie");
 	return (
-		<Card>
+		<Card variant="outlined">
+			<CardHeader
+				title={`${t("name")}: ${name}`}
+				subheader={`${t("year")}: ${year}`}
+			/>
 			<CardContent>
-				<Typography>{`${t("name")}: ${name}`}</Typography>
-				<Typography>{`${t("year")}: ${year}`}</Typography>
 				<Typography>{`${t("country")}: ${country}`}</Typography>
 				<Typography>{`${t("genre")}: ${genre}`}</Typography>
 				<Typography>{`${t("suggestedAge")}: ${suggestedAge}`}</Typography>

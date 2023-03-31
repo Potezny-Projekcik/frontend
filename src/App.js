@@ -8,7 +8,7 @@ function App() {
 		<I18nextProvider i18n={i18next}>
 			<BrowserRouter>
 				<Routes>
-					<Route path="/" element={<MoviesPage />} />
+					<Route path="/movies" element={<MoviesPage />} />
 				</Routes>
 			</BrowserRouter>
 		</I18nextProvider>
