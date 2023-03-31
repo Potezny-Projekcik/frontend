@@ -1,6 +1,7 @@
 {
 	"movies": [
 		{
+			"id": 1,
 			"name": "Name",
 			"year": "Year of production",
 			"country": "Country of origin",
@@ -10,6 +11,7 @@
 			"languages": ["lang1", "lang2"]
 		},
 		{
+			"id": 2,
 			"name": "Name2",
 			"year": "Year of production2",
 			"country": "Country of origin2",
@@ -19,6 +21,7 @@
 			"languages": ["lang1"]
 		},
 		{
+			"id": 3,
 			"name": "Name3",
 			"year": "Year of production3",
 			"country": "Country of origin3",

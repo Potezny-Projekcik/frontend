@@ -9,7 +9,7 @@ function Movie({ movie }) {
 	return (
 		<Card>
 			<CardContent>
-				<Typography> {`${t("name")}: ${name}`}</Typography>
+				<Typography>{`${t("name")}: ${name}`}</Typography>
 				<Typography>{`${t("year")}: ${year}`}</Typography>
 				<Typography>{`${t("country")}: ${country}`}</Typography>
 				<Typography>{`${t("genre")}: ${genre}`}</Typography>

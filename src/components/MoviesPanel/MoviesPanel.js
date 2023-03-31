@@ -6,7 +6,7 @@ function MoviesPanel() {
 	return (
 		<>
 			{movies.map((movie) => (
-				<Movie movie={movie} />
+				<Movie movie={movie} key={movie.id} />
 			))}
 		</>
 	);

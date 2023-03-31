@@ -7,11 +7,10 @@ export default function useMovies(url) {
 		try {
 			const response = await axios.get(url);
 			setMovies(response.data.movies);
-			console.log(response.data.movies);
 		} catch (err) {
 			console.error(err);
 		}
-	}, []);
+	}, [url]);
 
 	useEffect(() => {
 		fetchMovies();
