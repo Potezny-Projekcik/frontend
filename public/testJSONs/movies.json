@@ -1,0 +1,31 @@
+{
+	"movies": [
+		{
+			"name": "Name",
+			"year": "Year of production",
+			"country": "Country of origin",
+			"genre": "Genre",
+			"directors": ["dir1", "dir2", "dir3"],
+			"suggestedAge": 15,
+			"languages": ["lang1", "lang2"]
+		},
+		{
+			"name": "Name2",
+			"year": "Year of production2",
+			"country": "Country of origin2",
+			"genre": "Genre2",
+			"directors": ["dir1", "dir2", "dir3", "dir4"],
+			"suggestedAge": 18,
+			"languages": ["lang1"]
+		},
+		{
+			"name": "Name3",
+			"year": "Year of production3",
+			"country": "Country of origin3",
+			"genre": "Genre3",
+			"directors": ["dir1"],
+			"suggestedAge": 12,
+			"languages": ["lang1", "lang2", "lang3"]
+		}
+	]
+}
