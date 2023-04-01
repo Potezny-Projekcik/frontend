@@ -2,10 +2,14 @@ import i18n from "i18next";
 import detector from "i18next-browser-languagedetector";
 import { initReactI18next } from "react-i18next";
 import movieEn from "../translations/en/movie.json";
+import moviePl from "../translations/pl/movie.json";
 const resources = {
 	en: {
 		movie: movieEn,
 	},
+	// pl: {
+	// 	movie: moviePl,
+	// },
 };
 
 i18n
