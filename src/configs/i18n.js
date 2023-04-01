@@ -7,9 +7,9 @@ const resources = {
 	en: {
 		movie: movieEn,
 	},
-	// pl: {
-	// 	movie: moviePl,
-	// },
+	pl: {
+		movie: moviePl,
+	},
 };
 
 i18n
