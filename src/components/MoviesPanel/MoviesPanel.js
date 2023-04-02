@@ -7,8 +7,8 @@ function MoviesPanel() {
 	return (
 		<Grid container spacing={{ xs: 4, md: 5 }}>
 			{movies.map((movie) => (
-				<Grid item xs={12} sm={6} md={4}>
-					<Movie movie={movie} key={movie.id} />
+				<Grid item xs={12} sm={6} md={4} key={movie.id}>
+					<Movie movie={movie} />
 				</Grid>
 			))}
 		</Grid>
