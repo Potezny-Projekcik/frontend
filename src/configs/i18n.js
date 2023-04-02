@@ -7,6 +7,9 @@ import loginEn from "../translations/en/login.json";
 import loginPl from "../translations/pl/login.json";
 import registerEn from "../translations/en/register.json";
 import registerPl from "../translations/pl/register.json";
+import LanguageSwitcherEn from "../translations/en/LanguageSwitcher.json";
+import LanguageSwitcherPl from "../translations/pl/LanguageSwitcher.json"
+
 import userMovieEn from "../translations/en/userMovie.json";
 import userMoviePl from "../translations/pl/userMovie.json";
 import userCategoryEn from "../translations/en/userCategory.json";
@@ -20,6 +23,7 @@ const resources = {
 		movie: movieEn,
 		login: loginEn,
 		register: registerEn,
+		LanguageSwitcher: LanguageSwitcherEn
 		userMovie: userMovieEn,
 		userCategory: userCategoryEn,
 		LanguageSwitcher: LanguageSwitcherEn
@@ -28,6 +32,7 @@ const resources = {
 		movie: moviePl,
 		login: loginPl,
 		register: registerPl,
+		LanguageSwitcher: LanguageSwitcherPl
 		userMovie: userMoviePl,
 		userCategory: userCategoryPl,
 		LanguageSwitcher: LanguageSwitcherPl
