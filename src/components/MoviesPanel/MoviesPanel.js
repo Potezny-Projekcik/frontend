@@ -3,7 +3,7 @@ import useMovies from "../../hooks/useMovies";
 import Movie from "../Movie/Movie";
 
 function MoviesPanel() {
-	const { movies } = useMovies("testJSONs/movies.json");
+	const { movies } = useMovies();
 	return (
 		<Grid container spacing={{ xs: 4, md: 5 }}>
 			{movies.map((movie) => (

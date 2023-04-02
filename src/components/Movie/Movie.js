@@ -1,47 +1,52 @@
 import React from "react";
-import { Card, CardContent, CardHeader, Typography, Grid } from "@mui/material";
+import { CardContent, CardHeader, Typography, Grid } from "@mui/material";
 import { useTranslation } from "react-i18next";
 import { InternalMovieList, InternalMovieListItem, MovieCard } from "./styles";
 
 function ListTemplate({ elements }) {
+	console.log(elements);
 	return (
 		<InternalMovieList>
-			{elements.map((element) => (
-				<InternalMovieListItem>{element}</InternalMovieListItem>
+			{elements.map(({ name, id }) => (
+				<InternalMovieListItem key={id}>{name}</InternalMovieListItem>
 			))}
 		</InternalMovieList>
 	);
 }
 
-function DirectorsList({ directors }) {
-	return <ListTemplate elements={directors} />;
-}
-
-function LanguagesList({ languages }) {
-	return <ListTemplate elements={languages} />;
-}
-
 function Movie({ movie }) {
-	const { name, directors, languages, genre, country, year, suggestedAge } =
-		movie;
+	const {
+		title,
+		release_date,
+		genres,
+		production_companies,
+		spoken_languages,
+		production_countries,
+	} = movie;
 	const { t } = useTranslation("movie");
 	return (
 		<MovieCard variant="outlined">
-			<CardHeader title={`${name}`} subheader={`${t("year")}: ${year}`} />
+			<CardHeader
+				title={`${title}`}
+				subheader={`${t("release")}: ${release_date}`}
+			/>
 			<CardContent>
 				<Grid container spacing={3} direction="column">
 					<Grid item>
-						<Typography>{`${t("country")}: ${country}`}</Typography>
-						<Typography>{`${t("genre")}: ${genre}`}</Typography>
-						<Typography>{`${t("suggestedAge")}: ${suggestedAge}`}</Typography>
+						<Typography>{`${t("countries")}:`}</Typography>
+						<ListTemplate elements={production_countries} />
 					</Grid>
 					<Grid item>
-						<Typography>{`${t("directors")}:`}</Typography>
-						<DirectorsList directors={directors} />
+						<Typography>{`${t("genres")}:`}</Typography>
+						<ListTemplate elements={genres} />
 					</Grid>
 					<Grid item>
 						<Typography>{`${t("languages")}:`}</Typography>
-						<LanguagesList languages={languages} />
+						<ListTemplate elements={spoken_languages} />
+					</Grid>
+					<Grid item>
+						<Typography>{`${t("production")}:`}</Typography>
+						<ListTemplate elements={production_companies} />
 					</Grid>
 				</Grid>
 			</CardContent>
