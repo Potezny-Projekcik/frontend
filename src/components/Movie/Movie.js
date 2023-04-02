@@ -3,6 +3,24 @@ import { Card, CardContent, CardHeader, Typography, Grid } from "@mui/material";
 import { useTranslation } from "react-i18next";
 import { InternalMovieList, InternalMovieListItem } from "./styles";
 
+function ListTemplate({ elements }) {
+	return (
+		<InternalMovieList>
+			{elements.map((element) => (
+				<InternalMovieListItem>{element}</InternalMovieListItem>
+			))}
+		</InternalMovieList>
+	);
+}
+
+function DirectorsList({ directors }) {
+	return <ListTemplate elements={directors} />;
+}
+
+function LanguagesList({ languages }) {
+	return <ListTemplate elements={languages} />;
+}
+
 function Movie({ movie }) {
 	const { name, directors, languages, genre, country, year, suggestedAge } =
 		movie;
@@ -19,19 +37,11 @@ function Movie({ movie }) {
 					</Grid>
 					<Grid item>
 						<Typography>{`${t("directors")}:`}</Typography>
-						<InternalMovieList>
-							{directors.map((director) => (
-								<InternalMovieListItem>{director}</InternalMovieListItem>
-							))}
-						</InternalMovieList>
+						<DirectorsList directors={directors} />
 					</Grid>
 					<Grid item>
 						<Typography>{`${t("languages")}:`}</Typography>
-						<InternalMovieList>
-							{languages.map((lang) => (
-								<InternalMovieListItem>{lang}</InternalMovieListItem>
-							))}
-						</InternalMovieList>
+						<LanguagesList languages={languages} />
 					</Grid>
 				</Grid>
 			</CardContent>
