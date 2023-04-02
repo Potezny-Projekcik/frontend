@@ -1,14 +1,17 @@
+import { Grid } from "@mui/material";
 import useMovies from "../../hooks/useMovies";
 import Movie from "../Movie/Movie";
 
 function MoviesPanel() {
 	const { movies } = useMovies("testJSONs/movies.json");
 	return (
-		<>
+		<Grid container spacing={{ xs: 4, md: 5 }}>
 			{movies.map((movie) => (
-				<Movie movie={movie} key={movie.id} />
+				<Grid item xs={12} sm={6} md={4}>
+					<Movie movie={movie} key={movie.id} />
+				</Grid>
 			))}
-		</>
+		</Grid>
 	);
 }
 

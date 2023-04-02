@@ -1,7 +1,7 @@
 import React from "react";
 import { Card, CardContent, CardHeader, Typography, Grid } from "@mui/material";
 import { useTranslation } from "react-i18next";
-import { InternalMovieList, InternalMovieListItem } from "./styles";
+import { InternalMovieList, InternalMovieListItem, MovieCard } from "./styles";
 
 function ListTemplate({ elements }) {
 	return (
@@ -26,10 +26,10 @@ function Movie({ movie }) {
 		movie;
 	const { t } = useTranslation("movie");
 	return (
-		<Card variant="outlined">
+		<MovieCard variant="outlined">
 			<CardHeader title={`${name}`} subheader={`${t("year")}: ${year}`} />
 			<CardContent>
-				<Grid container spacing={20}>
+				<Grid container spacing={3} direction="column">
 					<Grid item>
 						<Typography>{`${t("country")}: ${country}`}</Typography>
 						<Typography>{`${t("genre")}: ${genre}`}</Typography>
@@ -45,7 +45,7 @@ function Movie({ movie }) {
 					</Grid>
 				</Grid>
 			</CardContent>
-		</Card>
+		</MovieCard>
 	);
 }
 

@@ -36,34 +36,29 @@
 			"languages": ["Polish", "English", "Spanish"]
 		},
 		{
-			"id": 4,
-			"name": "Godmother",
-			"year": "2005",
-			"country": "Poland",
-			"genre": "Drama",
-			"directors": ["Stanley Kubrick"],
-			"suggestedAge": 12,
-			"languages": ["Polish", "English", "Spanish"]
-		},
-		{
 			"id": 5,
-			"name": "Godmother",
-			"year": "2005",
-			"country": "Poland",
-			"genre": "Drama",
-			"directors": ["Stanley Kubrick"],
-			"suggestedAge": 12,
-			"languages": ["Polish", "English", "Spanish"]
+			"name": "The Bad, The Good and The Pretty",
+			"year": "2021",
+			"country": "USA",
+			"genre": "Action",
+			"directors": ["Quentin Tarantino", "Martin Scorsese", "Stanley Kubrick"],
+			"suggestedAge": 15,
+			"languages": ["English", "German"]
 		},
 		{
 			"id": 6,
-			"name": "Godmother",
-			"year": "2005",
-			"country": "Poland",
-			"genre": "Drama",
-			"directors": ["Stanley Kubrick"],
-			"suggestedAge": 12,
-			"languages": ["Polish", "English", "Spanish"]
+			"name": "Reservoir Cats",
+			"year": "1970",
+			"country": "France",
+			"genre": "Comedy",
+			"directors": [
+				"Christopher Nolan",
+				"James Cameron",
+				"Martin Scorsese",
+				"Quentin Tarantino"
+			],
+			"suggestedAge": 18,
+			"languages": ["French"]
 		},
 		{
 			"id": 7,
@@ -77,6 +72,66 @@
 		},
 		{
 			"id": 8,
+			"name": "The Bad, The Good and The Pretty",
+			"year": "2021",
+			"country": "USA",
+			"genre": "Action",
+			"directors": ["Quentin Tarantino", "Martin Scorsese", "Stanley Kubrick"],
+			"suggestedAge": 15,
+			"languages": ["English", "German"]
+		},
+		{
+			"id": 9,
+			"name": "Reservoir Cats",
+			"year": "1970",
+			"country": "France",
+			"genre": "Comedy",
+			"directors": [
+				"Christopher Nolan",
+				"James Cameron",
+				"Martin Scorsese",
+				"Quentin Tarantino"
+			],
+			"suggestedAge": 18,
+			"languages": ["French"]
+		},
+		{
+			"id": 10,
+			"name": "Godmother",
+			"year": "2005",
+			"country": "Poland",
+			"genre": "Drama",
+			"directors": ["Stanley Kubrick"],
+			"suggestedAge": 12,
+			"languages": ["Polish", "English", "Spanish"]
+		},
+		{
+			"id": 11,
+			"name": "The Bad, The Good and The Pretty",
+			"year": "2021",
+			"country": "USA",
+			"genre": "Action",
+			"directors": ["Quentin Tarantino", "Martin Scorsese", "Stanley Kubrick"],
+			"suggestedAge": 15,
+			"languages": ["English", "German"]
+		},
+		{
+			"id": 12,
+			"name": "Reservoir Cats",
+			"year": "1970",
+			"country": "France",
+			"genre": "Comedy",
+			"directors": [
+				"Christopher Nolan",
+				"James Cameron",
+				"Martin Scorsese",
+				"Quentin Tarantino"
+			],
+			"suggestedAge": 18,
+			"languages": ["French"]
+		},
+		{
+			"id": 13,
 			"name": "Godmother",
 			"year": "2005",
 			"country": "Poland",
