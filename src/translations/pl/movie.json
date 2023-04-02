@@ -1,9 +1,7 @@
 {
-	"name": "Tytuł",
-	"year": "Rok produkcji",
-	"country": "Kraj pochodzenia",
-	"genre": "Gatunek",
-	"directors": "Reżyseria",
-	"languages": "Języki",
-	"suggestedAge": "Zalecany wiek"
+	"release": "Premiera",
+	"countries": "Nakręcono w",
+	"genres": "Gatunki",
+	"production": "Produkcja",
+	"languages": "Języki"
 }
