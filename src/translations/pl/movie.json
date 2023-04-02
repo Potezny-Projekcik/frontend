@@ -1,0 +1,9 @@
+{
+	"name": "Tytuł",
+	"year": "Rok produkcji",
+	"country": "Kraj pochodzenia",
+	"genre": "Gatunek",
+	"directors": "Reżyseria",
+	"languages": "Języki",
+	"suggestedAge": "Zalecany wiek"
+}

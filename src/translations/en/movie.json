@@ -1,0 +1,9 @@
+{
+	"name": "Name",
+	"year": "Year of production",
+	"country": "Country of origin",
+	"genre": "Genre",
+	"directors": "Directors",
+	"languages": "Languages",
+	"suggestedAge": "Suggested age"
+}
