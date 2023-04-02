@@ -14,6 +14,7 @@ function getMoviesPromises(movies) {
 				production_countries,
 			} = res.data;
 			return {
+				id,
 				title,
 				release_date,
 				genres,
@@ -26,18 +27,20 @@ function getMoviesPromises(movies) {
 		}
 	});
 }
-export default function useMovies(url) {
+export default function useMovies() {
 	const [movies, setMovies] = useState([]);
 	const fetchMovies = useCallback(async () => {
 		try {
-			const response = await axios.get(url);
+			const response = await axios.get(
+				"https://api.themoviedb.org/3/movie/popular?api_key=8e36936e04ae03c485e9b156d52c6c39"
+			);
 			const moviesPromises = getMoviesPromises(response.data.results);
-			const allMovies = await Promise.all(moviesPromises);
-			setMovies(allMovies);
+			const moviesFromApi = await Promise.all(moviesPromises);
+			setMovies(moviesFromApi);
 		} catch (err) {
 			console.error(err);
 		}
-	}, [url]);
+	}, []);
 
 	useEffect(() => {
 		fetchMovies();

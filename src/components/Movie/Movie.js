@@ -1,14 +1,14 @@
 import React from "react";
-import { Card, CardContent, CardHeader, Typography, Grid } from "@mui/material";
+import { CardContent, CardHeader, Typography, Grid } from "@mui/material";
 import { useTranslation } from "react-i18next";
 import { InternalMovieList, InternalMovieListItem, MovieCard } from "./styles";
-import { hasLoadedNamespace } from "i18next";
 
 function ListTemplate({ elements }) {
+	console.log(elements);
 	return (
 		<InternalMovieList>
-			{elements.map(({ name }) => (
-				<InternalMovieListItem>{name}</InternalMovieListItem>
+			{elements.map(({ name, id }) => (
+				<InternalMovieListItem key={id}>{name}</InternalMovieListItem>
 			))}
 		</InternalMovieList>
 	);
@@ -23,7 +23,6 @@ function Movie({ movie }) {
 		spoken_languages,
 		production_countries,
 	} = movie;
-	console.log(movie);
 	const { t } = useTranslation("movie");
 	return (
 		<MovieCard variant="outlined">
