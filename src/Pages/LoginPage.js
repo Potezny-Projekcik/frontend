@@ -1,9 +1,8 @@
-import AuthPanel from "../components/Logging/AuthPanel";
-
+import Login from "../components/Logging/Login";
 function LoginPage() {
 	return (
 		<div>
-			<AuthPanel></AuthPanel>
+			<Login></Login>
 		</div>
 	);
 }

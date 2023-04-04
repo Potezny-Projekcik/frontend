@@ -1,13 +1,14 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
+import AuthPanel from "./AuthPanel";
 
 
 const Register = () => {
     return (
-        <div>
+        <AuthPanel>
 
-        </div>
+        </AuthPanel>      
     )
 }
 
-export default Login
+export default Register

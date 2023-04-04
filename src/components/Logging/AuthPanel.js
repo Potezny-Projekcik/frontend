@@ -8,9 +8,8 @@ import TextField from '@mui/material/TextField';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import Checkbox from '@mui/material/Checkbox';
 import Button from '@mui/material/Button';
-import { useRouter } from 'next/router'
 
-const AuthPanel = ({children}) => {
+const AuthPanel = ({children, title, name}) => {
   const handleSubmit = (event) => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
@@ -19,7 +18,6 @@ const AuthPanel = ({children}) => {
       password: data.get('password'),
     });
   };
-  const {pathname} = useRouter()
   return (
     <Container component="main" maxWidth="xs">
       <CssBaseline />
@@ -32,30 +30,12 @@ const AuthPanel = ({children}) => {
           }}
         >
           <Typography component="h1" variant="h2">
-            {pathname=== '/login' && <Link to="/events/new"></>}
+            {title}
           </Typography>
       </Box>
+      {children}
       <Box component="form" onSubmit={handleSubmit} noValidate sx={{ mt: 1 }}>
-      <TextField
-              margin="normal"
-              required
-              fullWidth
-              id="email"
-              label="Email Address"
-              name="email"
-              autoComplete="email"
-              autoFocus
-            />
-            <TextField
-              margin="normal"
-              required
-              fullWidth
-              name="password"
-              label="Password"
-              type="password"
-              id="password"
-              autoComplete="current-password"
-            />
+     
             <FormControlLabel
               control={<Checkbox value="remember" color="primary" />}
               label="Remember me"
@@ -66,7 +46,7 @@ const AuthPanel = ({children}) => {
               variant="contained"
               sx={{ mt: 3, mb: 2 }}
             >
-              Sign In
+              {name}
             </Button>
       </Box>
     </Container>
