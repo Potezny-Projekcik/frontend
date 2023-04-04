@@ -3,7 +3,8 @@ import { useTranslation } from "react-i18next";
 import { useRef, useState, UseEffect } from 'react';
 import AuthPanel from "./AuthPanel";
 import TextField from '@mui/material/TextField';
-
+import Button from '@mui/material/Button';
+import { Link } from "react-router-dom";
 
 
 
@@ -26,8 +27,8 @@ const Login = () => {
     // }, [user, pwd])
 
     return (
-        <AuthPanel title={"Sign up"} name={"Sign In"}>
- <TextField
+        <AuthPanel title={"Sign in"} name={"Sign In"}>
+            <TextField
               margin="normal"
               required
               fullWidth
@@ -47,6 +48,13 @@ const Login = () => {
               id="password"
               autoComplete="current-password"
             />
+            <Button 
+                component={Link} 
+                to="/Register"
+                fullWidth
+                sx={{ mt: 3, mb: 2 }}>
+                Don't have account? Sign up!
+            </Button>
         </AuthPanel>   
     )
 }

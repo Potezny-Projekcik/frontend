@@ -5,6 +5,7 @@ import i18next from "i18next";
 import MoviesPage from "./Pages/MoviesPage";
 import LoginPage from "./Pages/LoginPage";
 import RegisterPage from "./Pages/RegisterPage";
+
 function App() {
 	return (
 		<I18nextProvider i18n={i18next}>

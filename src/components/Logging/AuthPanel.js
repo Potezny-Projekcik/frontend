@@ -23,23 +23,19 @@ const AuthPanel = ({children, title, name}) => {
       <CssBaseline />
       <Box
           sx={{
-            marginTop: 8,
+            marginTop: 12,
+            marginBottom: 5,
             display: 'flex',
             flexDirection: 'column',
             alignItems: 'center',
           }}
         >
-          <Typography component="h1" variant="h2">
+          <Typography component="h1" variant="h3">
             {title}
           </Typography>
       </Box>
       {children}
       <Box component="form" onSubmit={handleSubmit} noValidate sx={{ mt: 1 }}>
-     
-            <FormControlLabel
-              control={<Checkbox value="remember" color="primary" />}
-              label="Remember me"
-            />
             <Button
               type="submit"
               fullWidth
