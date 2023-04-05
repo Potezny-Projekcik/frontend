@@ -12,35 +12,33 @@ import Collapse from '@mui/material/Collapse';
 
 export default function LanguageSwitcher() {
   const [open, setOpen] = useState(false);
-  const {t, i18n } = useTranslation();
+  const {t,i18n } = useTranslation("LanguageSwitcher");
 
   const handleLanguageChange = (lng) => {
     i18n.changeLanguage(lng);
   };
-
+  
   return (
     <List
       sx={{ width: '100%', maxWidth: 200, borderRadius: "10px",bgcolor: '#81d4fa'}}
       component="nav"
     >
-      <ListItemButton 
-        onClick={() => setOpen(!open)}
-         sx={{borderRadius: "10px"}} >
+      <ListItemButton onClick={() => setOpen(!open)}>
         <ListItemIcon>
         <LanguageIcon/>
         </ListItemIcon> 
-        <ListItemText primary="Language"/>
+        <ListItemText primary={`${t("language")}`} sx={{textAlign: 'center'}}></ListItemText>
         {open ? <ExpandLess /> : <ExpandMore />}
       </ListItemButton>
       <Collapse in={open} timeout="auto" unmountOnExit>
         <List component="div" disablePadding>
-          <ListItemButton sx={{pl: 4 ,bgcolor: '#b3e5fc'}} onClick={() => handleLanguageChange('en')}>
-            <ListItemText primary="English" sx={{ textAlign: 'center'}}
+          <ListItemButton sx={{ pl: 4, bgcolor: '#b3e5fc'}} onClick={() => handleLanguageChange('en')}>
+            <ListItemText primary={`${t("english")}`} sx={{ textAlign: 'center'}}
             primaryTypographyProps={{ fontWeight: i18n.language === 'en' ? 'bold' : 'inherit'}}
             />
           </ListItemButton>
-          <ListItemButton sx={{ pl: 4,bgcolor: '#b3e5fc'}} onClick={() => handleLanguageChange('pl')}>
-            <ListItemText primary="Polish" sx={{ textAlign: 'center'}}
+          <ListItemButton sx={{ pl: 4, bgcolor: '#b3e5fc' }} onClick={() => handleLanguageChange('pl')}>
+            <ListItemText primary={`${t('polish')}`} sx={{ textAlign: 'center'}}
             primaryTypographyProps={{ fontWeight: i18n.language === 'pl' ? 'bold' : 'inherit'}}/>
           </ListItemButton>
         </List>
