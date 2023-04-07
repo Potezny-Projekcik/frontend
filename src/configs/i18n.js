@@ -3,12 +3,20 @@ import detector from "i18next-browser-languagedetector";
 import { initReactI18next } from "react-i18next";
 import movieEn from "../translations/en/movie.json";
 import moviePl from "../translations/pl/movie.json";
+import loginEn from "../translations/en/login.json";
+import loginPl from "../translations/pl/login.json";
+import registerEn from "../translations/en/register.json";
+import registerPl from "../translations/pl/register.json";
 const resources = {
 	en: {
 		movie: movieEn,
+		login: loginEn,
+		register: registerEn,
 	},
 	pl: {
 		movie: moviePl,
+		login: loginPl,
+		register: registerPl,
 	},
 };
 

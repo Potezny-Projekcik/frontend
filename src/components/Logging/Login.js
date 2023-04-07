@@ -26,14 +26,16 @@ const Login = () => {
     //     setErrMsg('');
     // }, [user, pwd])
 
+  
+    const { t } = useTranslation("login");
     return (
-        <AuthPanel title={"Sign in"} name={"Sign In"}>
+        <AuthPanel title={`${t("title")}`} name={`${t("name")}`}>
             <TextField
               margin="normal"
               required
               fullWidth
               id="email"
-              label="Email Address"
+              label={`${t("email")}`}
               name="email"
               autoComplete="email"
               autoFocus
@@ -43,7 +45,7 @@ const Login = () => {
               required
               fullWidth
               name="password"
-              label="Password"
+              label={`${t("passwd")}`}
               type="password"
               id="password"
               autoComplete="current-password"
@@ -53,7 +55,7 @@ const Login = () => {
                 to="/Register"
                 fullWidth
                 sx={{ mt: 3, mb: 2 }}>
-                Don't have account? Sign up!
+                {`${t("switch")}`}
             </Button>
         </AuthPanel>   
     )

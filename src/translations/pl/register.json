@@ -1,0 +1,9 @@
+{
+    "title": "Rejestracja",
+    "name": "Zarejestruj się!",
+    "switch": "Masz już konto? Zaloguj się!",
+    "fName": "Imię",
+    "lName": "Nazwisko",
+    "email": "Adres Email",
+    "passwd": "Hasło"
+}
