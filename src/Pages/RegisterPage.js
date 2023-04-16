@@ -1,11 +1,12 @@
 import Register from "../components/Logging/Register";
+import UIContainer from "./UIContainer";
 
 function RegisterPage() {
-	return (
-		<div>
-			<Register></Register>
-		</div>
-	);
+  return (
+    <UIContainer>
+      <Register></Register>
+    </UIContainer>
+  );
 }
 
 export default RegisterPage;

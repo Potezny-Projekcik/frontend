@@ -1,10 +1,12 @@
 import Login from "../components/Logging/Login";
+import UIContainer from "./UIContainer";
+
 function LoginPage() {
-	return (
-		<div>
-			<Login></Login>
-		</div>
-	);
+  return (
+    <UIContainer>
+      <Login></Login>
+    </UIContainer>
+  );
 }
 
 export default LoginPage;
