@@ -1,10 +1,11 @@
 import MoviesPanel from "../components/MoviesPanel/MoviesPanel";
+import UIContainer from "./UIContainer";
 
 function MoviesPage() {
 	return (
-		<div>
+		<UIContainer>
 			<MoviesPanel></MoviesPanel>
-		</div>
+		</UIContainer>
 	);
 }
 
