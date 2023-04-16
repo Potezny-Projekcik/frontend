@@ -4,7 +4,6 @@ import { useTranslation } from "react-i18next";
 import { InternalMovieList, InternalMovieListItem, MovieCard } from "./styles";
 
 function ListTemplate({ elements }) {
-	console.log(elements);
 	return (
 		<InternalMovieList>
 			{elements.map(({ name, id }) => (
