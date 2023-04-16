@@ -1,9 +1,10 @@
 {
-    "title": "Sign up",
-    "name": "Sign up!",
-    "switch": "You already have account? Sign in!",
-    "fName": "First name",
-    "lName": "Last name",
-    "email": "Email Adress",
-    "passwd": "Password"
+  "title": "Sign up",
+  "name": "Sign up!",
+  "switch": "You already have account? Sign in!",
+  "fName": "First name",
+  "lName": "Last name",
+  "email": "Email Adress",
+  "passwd": "Password",
+  "date": "Date of birth"
 }

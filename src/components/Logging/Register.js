@@ -6,11 +6,17 @@ import AuthPanel from "./AuthPanel";
 import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
 import { Link } from "react-router-dom";
+import { DemoContainer, DemoItem } from "@mui/x-date-pickers/internals/demo";
+import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
+import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
+import { DatePicker } from "@mui/x-date-pickers/DatePicker";
+import dayjs from "dayjs";
 
 const Register = () => {
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
+  const [date, setDate] = useState(dayjs());
   const [pswd, setPswd] = useState("");
 
   const handleFirstNameChange = (event) => {
@@ -25,6 +31,11 @@ const Register = () => {
     setEmail(event.target.value);
   };
 
+  const handleDateChange = (event) => {
+    // console.log(event);
+    setDate(event);
+  };
+
   const handlePasswordChange = (event) => {
     setPswd(event.target.value);
   };
@@ -33,6 +44,7 @@ const Register = () => {
     event.preventDefault();
     // TODO: obsługa wysłania danych logowania
     console.log("User", firstName, lastName);
+    console.log("Date of birth", date);
     console.log("Logging in with", email, pswd);
   };
 
@@ -77,6 +89,25 @@ const Register = () => {
             name="email"
             autoComplete="email"
           />
+        </Grid>
+        <Grid item xs={12} rowSpacing={1}>
+          <LocalizationProvider dateAdapter={AdapterDayjs}>
+            <DemoContainer components={["DatePicker"]}>
+              <DemoItem>
+                <DatePicker
+                  onChange={handleDateChange}
+                  defaultValue={dayjs()}
+                  label={`${t("date")}`}
+                  id="date"
+                  slotProps={{
+                    textField: {
+                      helperText: "MM/DD/YYYY",
+                    },
+                  }}
+                />
+              </DemoItem>
+            </DemoContainer>
+          </LocalizationProvider>
         </Grid>
         <Grid item xs={12}>
           <TextField
