@@ -43,37 +43,32 @@ const getMoviesFromApi = async (pagesArray) => {
 };
 export default function useMovies() {
 	const [movies, setMovies] = useState([]);
-	const [isBottom, setIsBottom] = useState(false);
-	// const [moviesAmount, setMoviesAmount] = useState(MOVIE_PAGES_AMOUNT);
-	let moviesAmount = MOVIE_PAGES_AMOUNT;
+	const [moviesAmount, setMoviesAmount] = useState(MOVIE_PAGES_AMOUNT);
 
 	const fetchMovies = useCallback(async () => {
 		try {
+			const moviesPages = movies.length / 20;
 			const pagesArray = Array.from(
-				{ length: moviesAmount - movies.length },
+				{ length: moviesAmount - moviesPages },
 				(_, i) => i + movies.length + 1
 			);
-			console.log(pagesArray);
 			const moviesFromApi = await getMoviesFromApi(pagesArray);
-			setMovies(moviesFromApi);
+			setMovies([...movies, ...moviesFromApi]);
 		} catch (err) {
 			console.error(err);
 		}
-	}, []);
+	}, [movies, moviesAmount]);
+
 	const handleScroll = useCallback(() => {
 		const { scrollY, innerHeight } = window;
-		const margin = 200;
+		const margin = 400;
 		const isScrolledToBottom =
 			scrollY + innerHeight + margin >= document.body.offsetHeight;
-		if (isScrolledToBottom && !isBottom) {
-			setIsBottom(true);
-			// setMoviesAmount(moviesAmount + 1);
-			moviesAmount++;
-			fetchMovies();
-		} else {
-			setIsBottom(false);
+		if (isScrolledToBottom) {
+			setMoviesAmount(moviesAmount + 1);
 		}
-	}, []);
+	}, [moviesAmount]);
+
 	useEffect(() => {
 		window.addEventListener("scroll", handleScroll);
 

@@ -1,7 +1,6 @@
 import { Grid } from "@mui/material";
 import useMovies from "../../hooks/useMovies";
 import Movie from "../Movie/Movie";
-import { useState, useEffect } from "react";
 
 function MoviesPanel() {
 	const { movies } = useMovies();
