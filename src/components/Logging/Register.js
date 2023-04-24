@@ -1,11 +1,9 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
-import { useRef, useState, UseEffect } from "react";
+import { useState } from "react";
 import Grid from "@mui/material/Grid";
 import AuthPanel from "./AuthPanel";
 import TextField from "@mui/material/TextField";
-import Button from "@mui/material/Button";
-import { Link } from "react-router-dom";
 import { DemoContainer, DemoItem } from "@mui/x-date-pickers/internals/demo";
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
@@ -42,10 +40,6 @@ const Register = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    // TODO: obsługa wysłania danych logowania
-    console.log("User", firstName, lastName);
-    console.log("Date of birth", date);
-    console.log("Logging in with", email, pswd);
   };
 
   const { t } = useTranslation("register");
@@ -54,6 +48,8 @@ const Register = () => {
       title={`${t("title")}`}
       name={`${t("name")}`}
       handleSubmit={handleSubmit}
+      switchMsg={`${t("switch")}`}
+      moveTo={"/login"}
     >
       <Grid container spacing={2} rowSpacing={2}>
         <Grid item xs={12} sm={6} rowSpacing={1}>
@@ -96,7 +92,6 @@ const Register = () => {
               <DemoItem>
                 <DatePicker
                   onChange={handleDateChange}
-                  defaultValue={dayjs()}
                   label={`${t("date")}`}
                   id="date"
                   slotProps={{
@@ -122,9 +117,6 @@ const Register = () => {
           />
         </Grid>
       </Grid>
-      <Button component={Link} to="/Login" fullWidth sx={{ mt: 3, mb: 2 }}>
-        {`${t("switch")}`}
-      </Button>
     </AuthPanel>
   );
 };

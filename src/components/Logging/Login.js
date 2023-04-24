@@ -1,10 +1,8 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
-import { useRef, useState, UseEffect } from "react";
+import { useState } from "react";
 import AuthPanel from "./AuthPanel";
 import TextField from "@mui/material/TextField";
-import Button from "@mui/material/Button";
-import { Link } from "react-router-dom";
 
 const Login = () => {
   const [email, setEmail] = useState("");
@@ -20,10 +18,8 @@ const Login = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    // TODO: obsługa wysłania danych logowania
-    // Call login API with username and password
-    console.log("Logging in with", email, pswd);
 
+    // TODO: Logging data menagement
     // Make axios POST request to write data to JSON file
     // axios
     //   .post("/api/users", { email, pswd })
@@ -41,6 +37,8 @@ const Login = () => {
       title={`${t("title")}`}
       name={`${t("name")}`}
       handleSubmit={handleSubmit}
+      switchMsg={`${t("switch")}`}
+      moveTo={"/register"}
     >
       <TextField
         onChange={handleEmailChange}
@@ -64,9 +62,6 @@ const Login = () => {
         id="password"
         autoComplete="current-password"
       />
-      <Button component={Link} to="/Register" fullWidth sx={{ mt: 3, mb: 2 }}>
-        {`${t("switch")}`}
-      </Button>
     </AuthPanel>
   );
 };
