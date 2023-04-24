@@ -30,7 +30,6 @@ const Register = () => {
   };
 
   const handleDateChange = (event) => {
-    // console.log(event);
     setDate(event);
   };
 
