@@ -1,6 +1,8 @@
 import { useCallback, useEffect, useState } from "react";
 import axios from "axios";
 const MOVIE_PAGES_AMOUNT = 3;
+const SCROLL_MARGIN = 400;
+const API_PAGE_LENGTH = 20;
 
 function getMoviesPromises(movies) {
 	return movies.map(async ({ title, release_date, id }) => {
@@ -47,7 +49,7 @@ export default function useMovies() {
 
 	const fetchMovies = useCallback(async () => {
 		try {
-			const moviesPages = movies.length / 20;
+			const moviesPages = movies.length / API_PAGE_LENGTH;
 			const pagesArray = Array.from(
 				{ length: moviesAmount - moviesPages },
 				(_, i) => i + movies.length + 1
@@ -61,7 +63,7 @@ export default function useMovies() {
 
 	const handleScroll = useCallback(() => {
 		const { scrollY, innerHeight } = window;
-		const margin = 400;
+		const margin = SCROLL_MARGIN;
 		const isScrolledToBottom =
 			scrollY + innerHeight + margin >= document.body.offsetHeight;
 		if (isScrolledToBottom) {
