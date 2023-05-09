@@ -1,0 +1,172 @@
+{
+  "movies": [
+    {
+      "id": 1,
+      "view_date": "2015-03-25",
+      "title": "The Bad, The Good and The Pretty",
+      "year": "2021",
+      "production_countries": "USA",
+      "genre": "Action",
+      "production_companies": [
+        "Quentin Tarantino",
+        "Martin Scorsese",
+        "Stanley Kubrick"
+      ],
+      "languages": ["English", "German"],
+      "rating": "5"
+    },
+    {
+      "id": 2,
+      "view_date": "2015-03-25",
+      "title": "Reservoir Cats",
+      "year": "1970",
+      "production_countries": "France",
+      "genre": "Comedy",
+      "production_companies": [
+        "Christopher Nolan",
+        "James Cameron",
+        "Martin Scorsese",
+        "Quentin Tarantino"
+      ],
+      "languages": ["French"],
+      "rating": "5"
+    },
+    {
+      "id": 3,
+      "view_date": "2015-03-25",
+      "title": "Godmother",
+      "year": "2005",
+      "production_countries": "Poland",
+      "genre": "Drama",
+      "production_companies": ["Stanley Kubrick"],
+      "languages": ["Polish", "English", "Spanish"],
+      "rating": "5"
+    },
+    {
+      "id": 5,
+      "view_date": "2015-03-25",
+      "title": "The Bad, The Good and The Pretty",
+      "year": "2021",
+      "production_countries": "USA",
+      "genre": "Action",
+      "production_companies": [
+        "Quentin Tarantino",
+        "Martin Scorsese",
+        "Stanley Kubrick"
+      ],
+      "languages": ["English", "German"],
+      "rating": "5"
+    },
+    {
+      "id": 6,
+      "view_date": "2015-03-25",
+      "title": "Reservoir Cats",
+      "year": "1970",
+      "production_countries": "France",
+      "genre": "Comedy",
+      "production_companies": [
+        "Christopher Nolan",
+        "James Cameron",
+        "Martin Scorsese",
+        "Quentin Tarantino"
+      ],
+      "languages": ["French"],
+      "rating": "5"
+    },
+    {
+      "id": 7,
+      "view_date": "2015-03-25",
+      "title": "Godmother",
+      "year": "2005",
+      "production_countries": "Poland",
+      "genre": "Drama",
+      "production_companies": ["Stanley Kubrick"],
+      "languages": ["Polish", "English", "Spanish"],
+      "rating": "5"
+    },
+    {
+      "id": 8,
+      "view_date": "2015-03-25",
+      "title": "The Bad, The Good and The Pretty",
+      "year": "2021",
+      "production_countries": "USA",
+      "genre": "Action",
+      "production_companies": [
+        "Quentin Tarantino",
+        "Martin Scorsese",
+        "Stanley Kubrick"
+      ],
+      "languages": ["English", "German"],
+      "rating": "5"
+    },
+    {
+      "id": 9,
+      "view_date": "2015-03-25",
+      "title": "Reservoir Cats",
+      "year": "1970",
+      "production_countries": "France",
+      "genre": "Comedy",
+      "production_companies": [
+        "Christopher Nolan",
+        "James Cameron",
+        "Martin Scorsese",
+        "Quentin Tarantino"
+      ],
+      "languages": ["French"],
+      "rating": "5"
+    },
+    {
+      "id": 10,
+      "view_date": "2015-03-25",
+      "title": "Godmother",
+      "year": "2005",
+      "production_countries": "Poland",
+      "genre": "Drama",
+      "production_companies": ["Stanley Kubrick"],
+      "languages": ["Polish", "English", "Spanish"],
+      "rating": "5"
+    },
+    {
+      "id": 11,
+      "view_date": "2015-03-25",
+      "title": "The Bad, The Good and The Pretty",
+      "year": "2021",
+      "production_countries": "USA",
+      "genre": "Action",
+      "production_companies": [
+        "Quentin Tarantino",
+        "Martin Scorsese",
+        "Stanley Kubrick"
+      ],
+      "languages": ["English", "German"],
+      "rating": "5"
+    },
+    {
+      "id": 12,
+      "view_date": "2015-03-25",
+      "title": "Reservoir Cats",
+      "year": "1970",
+      "production_countries": "France",
+      "genre": "Comedy",
+      "production_companies": [
+        "Christopher Nolan",
+        "James Cameron",
+        "Martin Scorsese",
+        "Quentin Tarantino"
+      ],
+      "languages": ["French"],
+      "rating": "5"
+    },
+    {
+      "id": 13,
+      "view_date": "2015-03-25",
+      "title": "Godmother",
+      "year": "2005",
+      "production_countries": "Poland",
+      "genre": "Drama",
+      "production_companies": ["Stanley Kubrick"],
+      "languages": ["Polish", "English", "Spanish"],
+      "rating": "5"
+    }
+  ]
+}
