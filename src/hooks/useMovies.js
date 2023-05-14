@@ -1,6 +1,8 @@
 import { useCallback, useEffect, useState } from "react";
 import axios from "axios";
 const MOVIE_PAGES_AMOUNT = 3;
+const SCROLL_MARGIN = 400;
+const API_PAGE_LENGTH = 20;
 
 function getMoviesPromises(movies) {
 	return movies.map(async ({ title, release_date, id }) => {
@@ -28,29 +30,54 @@ function getMoviesPromises(movies) {
 		}
 	});
 }
+const getMoviesFromApi = async (pagesArray) => {
+	const requests = pagesArray.map((page) =>
+		axios.get(
+			`https://api.themoviedb.org/3/movie/popular?api_key=8e36936e04ae03c485e9b156d52c6c39&page=${page}`
+		)
+	);
+
+	const results = await Promise.all(requests);
+	const moviesResults = results.flatMap((result) => result.data.results);
+	const moviesPromises = getMoviesPromises(moviesResults);
+	const moviesFromApi = await Promise.all(moviesPromises);
+	return moviesFromApi;
+};
 export default function useMovies() {
 	const [movies, setMovies] = useState([]);
+	const [moviesAmount, setMoviesAmount] = useState(MOVIE_PAGES_AMOUNT);
+
 	const fetchMovies = useCallback(async () => {
 		try {
+			const moviesPages = movies.length / API_PAGE_LENGTH;
 			const pagesArray = Array.from(
-				{ length: MOVIE_PAGES_AMOUNT },
-				(_, i) => i + 1
+				{ length: moviesAmount - moviesPages },
+				(_, i) => i + movies.length + 1
 			);
-			const requests = pagesArray.map((page) =>
-				axios.get(
-					`https://api.themoviedb.org/3/movie/popular?api_key=8e36936e04ae03c485e9b156d52c6c39&page=${page}`
-				)
-			);
-
-			const results = await Promise.all(requests);
-			const moviesResults = results.flatMap((result) => result.data.results);
-			const moviesPromises = getMoviesPromises(moviesResults);
-			const moviesFromApi = await Promise.all(moviesPromises);
-			setMovies(moviesFromApi);
+			const moviesFromApi = await getMoviesFromApi(pagesArray);
+			setMovies([...movies, ...moviesFromApi]);
 		} catch (err) {
 			console.error(err);
 		}
-	}, []);
+	}, [movies, moviesAmount]);
+
+	const handleScroll = useCallback(() => {
+		const { scrollY, innerHeight } = window;
+		const margin = SCROLL_MARGIN;
+		const isScrolledToBottom =
+			scrollY + innerHeight + margin >= document.body.offsetHeight;
+		if (isScrolledToBottom) {
+			setMoviesAmount(moviesAmount + 1);
+		}
+	}, [moviesAmount]);
+
+	useEffect(() => {
+		window.addEventListener("scroll", handleScroll);
+
+		return () => {
+			window.removeEventListener("scroll", handleScroll);
+		};
+	}, [handleScroll]);
 
 	useEffect(() => {
 		fetchMovies();
