@@ -6,7 +6,7 @@ import MoviesPage from "./Pages/MoviesPage";
 import LoginPage from "./Pages/LoginPage";
 import RegisterPage from "./Pages/RegisterPage";
 
-function App() {
+const App = () => {
 	return (
 		<I18nextProvider i18n={i18next}>
 			<BrowserRouter>
@@ -18,6 +18,6 @@ function App() {
 			</BrowserRouter>
 		</I18nextProvider>
 	);
-}
+};
 
 export default App;

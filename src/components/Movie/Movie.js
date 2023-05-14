@@ -3,7 +3,7 @@ import { CardContent, CardHeader, Typography, Grid } from "@mui/material";
 import { useTranslation } from "react-i18next";
 import { InternalMovieList, InternalMovieListItem, MovieCard } from "./styles";
 
-function ListTemplate({ elements }) {
+const ListTemplate = ({ elements }) => {
 	return (
 		<InternalMovieList>
 			{elements.map(({ name, id }) => (
@@ -11,9 +11,9 @@ function ListTemplate({ elements }) {
 			))}
 		</InternalMovieList>
 	);
-}
+};
 
-function Movie({ movie }) {
+const Movie = ({ movie }) => {
 	const {
 		title,
 		release_date,
@@ -51,6 +51,6 @@ function Movie({ movie }) {
 			</CardContent>
 		</MovieCard>
 	);
-}
+};
 
 export default Movie;
