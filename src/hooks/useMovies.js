@@ -4,7 +4,7 @@ const MOVIE_PAGES_AMOUNT = 3;
 const SCROLL_MARGIN = 400;
 const API_PAGE_LENGTH = 20;
 
-function getMoviesPromises(movies) {
+const getMoviesPromises = (movies) => {
 	return movies.map(async ({ title, release_date, id }) => {
 		try {
 			const res = await axios.get(
@@ -29,7 +29,7 @@ function getMoviesPromises(movies) {
 			console.error(err);
 		}
 	});
-}
+};
 const getMoviesFromApi = async (pagesArray) => {
 	const requests = pagesArray.map((page) =>
 		axios.get(
@@ -43,7 +43,7 @@ const getMoviesFromApi = async (pagesArray) => {
 	const moviesFromApi = await Promise.all(moviesPromises);
 	return moviesFromApi;
 };
-export default function useMovies() {
+export const useMovies = () => {
 	const [movies, setMovies] = useState([]);
 	const [moviesAmount, setMoviesAmount] = useState(MOVIE_PAGES_AMOUNT);
 
@@ -83,4 +83,4 @@ export default function useMovies() {
 		fetchMovies();
 	}, [fetchMovies]);
 	return { movies };
-}
+};

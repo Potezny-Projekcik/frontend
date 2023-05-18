@@ -1,8 +1,8 @@
 import { Grid } from "@mui/material";
-import useMovies from "../../hooks/useMovies";
+import { useMovies } from "../../hooks/useMovies";
 import Movie from "../Movie/Movie";
 
-function MoviesPanel() {
+const MoviesPanel = () => {
 	const { movies } = useMovies();
 
 	return (
@@ -14,6 +14,6 @@ function MoviesPanel() {
 			))}
 		</Grid>
 	);
-}
+};
 
 export default MoviesPanel;
