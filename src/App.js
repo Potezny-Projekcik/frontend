@@ -15,7 +15,7 @@ const App = () => {
           <Route path="/movies" element={<MoviesPage />} />
           <Route path="/login" element={<LoginPage />} />
           <Route path="/register" element={<RegisterPage />} />
-          <Route path="/usermovies" element={<CategoryMoviesPage />} />
+          <Route path="/categorymovies" element={<CategoryMoviesPage />} />
         </Routes>
       </BrowserRouter>
     </I18nextProvider>

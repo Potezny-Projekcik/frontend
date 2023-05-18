@@ -1,16 +1,26 @@
 import { Grid } from "@mui/material";
+import useMoviesTest from "../../hooks/useMoviesTest";
+import MovieRow from "../Movie/MovieRow";
 import Table from "@mui/material/Table";
-import useMovies from "../../hooks/useMoviesTest";
-import Movie from "../Movie/MovieRow";
+import TableBody from "@mui/material/TableBody";
+import TableHead from "@mui/material/TableHead";
+import TableCell from "@mui/material/TableCell";
+import TableRow from "@mui/material/TableRow";
+import Title from "../Movie/Title";
+import { useTranslation } from "react-i18next";
 
+const preventDefault = (event) => {
+  event.preventDefault();
+};
 function CategoryMoviesPanel() {
   const { movies } = useMoviesTest("TestsJSON/sampleMovies.json");
+  console.log(movies);
   const { t } = useTranslation("userMovie");
-  category = "Do piwka";
+  const category = "Do piwka";
   return (
     <Grid>
       <Title>User's movies - Category: {category}</Title>
-      <Table size="medium">
+      <Table size="small">
         <TableHead>
           <TableRow>
             <TableCell>{`${t("Date")}`}</TableCell>
@@ -24,16 +34,13 @@ function CategoryMoviesPanel() {
           </TableRow>
         </TableHead>
         <TableBody>
-          {movies.map((movie) => (
-            <MovieRow movie={movie} />
+          {movies.map((userMovie) => (
+            <MovieRow movie={userMovie} />
           ))}
         </TableBody>
       </Table>
-      <Link color="primary" href="#" onClick={preventDefault} sx={{ mt: 3 }}>
-        See more orders
-      </Link>
     </Grid>
   );
 }
 
-export default MoviesPanel;
+export default CategoryMoviesPanel;
