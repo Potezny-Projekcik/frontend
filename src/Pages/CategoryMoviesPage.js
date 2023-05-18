@@ -1,4 +1,4 @@
-import CategoryMoviesPanel from "../components/MoviesPanel/CategoryMoviesPanel";
+import CategoryMoviesPanel from "../components/Panels/CategoryMoviesPanel";
 import UIContainer from "./UIContainer";
 
 const CategoryMoviesPage = () => {
