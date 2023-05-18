@@ -33,4 +33,8 @@ const MovieRow = ({ movie }) => {
   );
 };
 
+MovieRow.propTypes = {
+  children: PropTypes.node,
+};
+
 export default MovieRow;

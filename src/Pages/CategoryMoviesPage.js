@@ -1,12 +1,12 @@
 import CategoryMoviesPanel from "../components/MoviesPanel/CategoryMoviesPanel";
 import UIContainer from "./UIContainer";
 
-function CategoryMoviesPage() {
+const CategoryMoviesPage = () => {
   return (
     <UIContainer>
-      <CategoryMoviesPanel></CategoryMoviesPanel>
+      <CategoryMoviesPanel />
     </UIContainer>
   );
-}
+};
 
 export default CategoryMoviesPage;

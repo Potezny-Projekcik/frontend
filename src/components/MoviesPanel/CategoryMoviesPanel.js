@@ -1,5 +1,5 @@
 import { Grid } from "@mui/material";
-import useMoviesTest from "../../hooks/useMoviesTest";
+import useMoviesTest from "../../hooks/useMoviesFromFile";
 import MovieRow from "../Movie/MovieRow";
 import Table from "@mui/material/Table";
 import TableBody from "@mui/material/TableBody";
@@ -12,8 +12,9 @@ import { useTranslation } from "react-i18next";
 const preventDefault = (event) => {
   event.preventDefault();
 };
-function CategoryMoviesPanel() {
-  const { movies } = useMoviesTest("TestsJSON/sampleMovies.json");
+
+const CategoryMoviesPanel = () => {
+  const { movies } = useMoviesFromFile("TestsJSON/sampleMovies.json");
   console.log(movies);
   const { t } = useTranslation("userMovie");
   const category = "Do piwka";
@@ -41,6 +42,6 @@ function CategoryMoviesPanel() {
       </Table>
     </Grid>
   );
-}
+};
 
 export default CategoryMoviesPanel;
