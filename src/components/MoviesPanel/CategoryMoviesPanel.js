@@ -1,5 +1,5 @@
 import { Grid } from "@mui/material";
-import useMoviesTest from "../../hooks/useMoviesFromFile";
+import useMoviesFromFile from "../../hooks/useMoviesFromFile";
 import MovieRow from "../Movie/MovieRow";
 import Table from "@mui/material/Table";
 import TableBody from "@mui/material/TableBody";

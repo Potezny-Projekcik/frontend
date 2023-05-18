@@ -1,11 +1,7 @@
 import React from "react";
-import { CardContent, CardHeader, Typography, Grid } from "@mui/material";
-import { useTranslation } from "react-i18next";
-import { InternalMovieList, InternalMovieListItem, MovieCard } from "./styles";
-import Table from "@mui/material/Table";
-import TableBody from "@mui/material/TableBody";
 import TableCell from "@mui/material/TableCell";
 import TableRow from "@mui/material/TableRow";
+import PropTypes from "prop-types";
 
 const MovieRow = ({ movie }) => {
   const {
@@ -34,7 +30,7 @@ const MovieRow = ({ movie }) => {
 };
 
 MovieRow.propTypes = {
-  children: PropTypes.node,
+  movie: PropTypes.object,
 };
 
 export default MovieRow;
