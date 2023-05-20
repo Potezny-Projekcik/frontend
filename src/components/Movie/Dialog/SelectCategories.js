@@ -1,6 +1,7 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import DialogContentTemplate from "./DialogContentTemplate";
 import { Select, OutlinedInput, Box, Chip, MenuItem } from "@mui/material";
+import { MovieContext } from "../AddMovieDialog";
 const categories = [
 	"Do piwka",
 	"Samemu",
@@ -10,10 +11,12 @@ const categories = [
 ];
 const SelectCategories = ({ text }) => {
 	const [category, setCategory] = useState([]);
+	const { changeCategories } = useContext(MovieContext);
 	const handleChange = (event) => {
 		const {
 			target: { value },
 		} = event;
+		changeCategories(value);
 		setCategory(typeof value === "string" ? value.split(",") : value);
 	};
 	return (
