@@ -1,5 +1,10 @@
 {
 	"addBtn": "Dodaj",
 	"addDialog1": "Dodaj",
-	"addDialog2": "do twojej listy"
+	"addDialog2": "do twojej listy",
+	"cancelBtn": "Anuluj",
+	"submitBtn": "Dodaj do listy",
+	"priorityDesc": "Wybierz priorytet",
+	"dateDesc": "Wybierz kiedy chcesz zobaczyć",
+	"categoryDesc": "Wybierz kategorię"
 }
