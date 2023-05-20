@@ -7,16 +7,25 @@ import loginEn from "../translations/en/login.json";
 import loginPl from "../translations/pl/login.json";
 import registerEn from "../translations/en/register.json";
 import registerPl from "../translations/pl/register.json";
+import userMovieEn from "../translations/en/userMovie.json";
+import userMoviePl from "../translations/pl/userMovie.json";
+import userCategoryEn from "../translations/en/userCategory.json";
+import userCategoryPl from "../translations/pl/userCategory.json";
+
 const resources = {
 	en: {
 		movie: movieEn,
 		login: loginEn,
 		register: registerEn,
+		userMovie: userMovieEn,
+		userCategory: userCategoryEn,
 	},
 	pl: {
 		movie: moviePl,
 		login: loginPl,
 		register: registerPl,
+		userMovie: userMoviePl,
+		userCategory: userCategoryPl,
 	},
 };
 
