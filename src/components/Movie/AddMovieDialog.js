@@ -10,6 +10,10 @@ import {
 } from "@mui/material";
 import { CancelButton, SubmitButton } from "./styles";
 import { getArrayOfPriorities } from "./utils";
+import { DatePicker } from "@mui/x-date-pickers/DatePicker";
+import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
+import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
+
 const AddMovieDialog = ({ open, movie, onClose, t }) => {
 	const handleClose = () => {
 		onClose();
@@ -23,13 +27,19 @@ const AddMovieDialog = ({ open, movie, onClose, t }) => {
 			)}`}</DialogTitle>
 			<DialogContent>
 				<DialogContentText>{`${t("priorityDesc")}`}</DialogContentText>
-				<TextField id="outlined-select-currency" select defaultValue="1">
-					{priorities.map((option, index) => (
+				<TextField id="outlined-select-priority" select defaultValue="1">
+					{priorities.map((option) => (
 						<MenuItem key={option} value={option}>
 							{option}
 						</MenuItem>
 					))}
 				</TextField>
+			</DialogContent>
+			<DialogContent>
+				<DialogContentText>{`${t("dateDesc")}`}</DialogContentText>
+				<LocalizationProvider dateAdapter={AdapterDayjs}>
+					<DatePicker />
+				</LocalizationProvider>
 			</DialogContent>
 
 			<DialogActions>
