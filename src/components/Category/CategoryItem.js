@@ -7,6 +7,9 @@ import ListItemText from "@mui/material/ListItemText";
 import IconButton from "@mui/material/IconButton";
 import Avatar from "@mui/material/Avatar";
 import ListItemAvatar from "@mui/material/ListItemAvatar";
+import { Button } from "@mui/material";
+import { Link } from "react-router-dom";
+
 
 const CategoryItem = ({ category }) => {
   const { id, name } = category;
@@ -18,12 +21,14 @@ const CategoryItem = ({ category }) => {
         </IconButton>
       }
     >
-      <ListItemAvatar>
-        <Avatar>
-          <FolderIcon />
-        </Avatar>
-      </ListItemAvatar>
-      <ListItemText primary={name} />
+      <Button component={Link} to={name}>
+        <ListItemAvatar>
+         <Avatar>
+            <FolderIcon />
+          </Avatar>
+        </ListItemAvatar>
+        <ListItemText primary={name} />
+      </Button>
     </ListItem>
   );
 };
