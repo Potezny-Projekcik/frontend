@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
 	Dialog,
 	DialogTitle,
@@ -7,16 +7,33 @@ import {
 	DialogContentText,
 	TextField,
 	MenuItem,
+	Select,
+	Box,
+	Chip,
+	OutlinedInput,
 } from "@mui/material";
 import { CancelButton, SubmitButton } from "./styles";
 import { getArrayOfPriorities } from "./utils";
 import { DatePicker } from "@mui/x-date-pickers/DatePicker";
 import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
-
+const categories = [
+	"Do piwka",
+	"Samemu",
+	"Na zły humor",
+	"Z dziewczyną",
+	"Z kumplami",
+];
 const AddMovieDialog = ({ open, movie, onClose, t }) => {
 	const handleClose = () => {
 		onClose();
+	};
+	const [category, setCategory] = useState([]);
+	const handleChange = (event) => {
+		const {
+			target: { value },
+		} = event;
+		setCategory(typeof value === "string" ? value.split(",") : value);
 	};
 	const addMovie = () => {};
 	const priorities = getArrayOfPriorities(5);
@@ -40,6 +57,29 @@ const AddMovieDialog = ({ open, movie, onClose, t }) => {
 				<LocalizationProvider dateAdapter={AdapterDayjs}>
 					<DatePicker />
 				</LocalizationProvider>
+			</DialogContent>
+			<DialogContent>
+				<DialogContentText>{`${t("categoryDesc")}`}</DialogContentText>
+				<Select
+					id="select-category"
+					multiple
+					value={category}
+					onChange={handleChange}
+					input={<OutlinedInput id="select-multiple" />}
+					renderValue={(selected) => (
+						<Box sx={{ display: "flex", flexWrap: "wrap", gap: 0.5 }}>
+							{selected.map((value) => (
+								<Chip key={value} label={value} />
+							))}
+						</Box>
+					)}
+				>
+					{categories.map((categoryItem) => (
+						<MenuItem key={categoryItem} value={categoryItem}>
+							{categoryItem}
+						</MenuItem>
+					))}
+				</Select>
 			</DialogContent>
 
 			<DialogActions>
