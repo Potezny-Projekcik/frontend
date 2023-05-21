@@ -43,7 +43,7 @@ const AddMovieDialog = ({ open, movie, onClose, t }) => {
 	);
 	return (
 		<MovieContext.Provider value={contextValue}>
-			<Dialog onClose={handleClose} open={open}>
+			<Dialog onClose={handleClose} open={open} fullWidth>
 				<DialogTitle>{`${t("addDialog1")} "${movie.title}" ${t(
 					"addDialog2"
 				)}`}</DialogTitle>
