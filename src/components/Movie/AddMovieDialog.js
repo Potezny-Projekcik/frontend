@@ -23,20 +23,20 @@ const AddMovieDialog = ({ open, movie, onClose, t }) => {
 	const changePriority = (priority) => {
 		changeProperty({
 			key: "priority",
-			property: priority,
+			value: priority,
 			movieToAdd,
 			setMovieToAdd,
 		});
 	};
 
 	const changeDate = (date) => {
-		changeProperty({ key: "date", property: date, movieToAdd, setMovieToAdd });
+		changeProperty({ key: "date", value: date, movieToAdd, setMovieToAdd });
 	};
 
 	const changeCategories = (categories) => {
 		changeProperty({
 			key: "categories",
-			property: categories,
+			value: categories,
 			movieToAdd,
 			setMovieToAdd,
 		});
