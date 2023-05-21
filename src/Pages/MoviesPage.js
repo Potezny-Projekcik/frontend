@@ -4,7 +4,7 @@ import UIContainer from "./UIContainer";
 const MoviesPage = () => {
   return (
     <UIContainer>
-      <MoviesPanel></MoviesPanel>
+      <MoviesPanel/>
     </UIContainer>
   );
 };

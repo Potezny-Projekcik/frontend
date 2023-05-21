@@ -4,9 +4,10 @@ import { useParams } from "react-router-dom";
 
 const CategoryMoviesPage = () => {
   const routeParams = useParams();
+  const {id} = routeParams;
   return (
     <UIContainer>
-      <CategoryMoviesPanel category={routeParams.id}/>
+      <CategoryMoviesPanel category={id}/>
     </UIContainer>
   );
 };
