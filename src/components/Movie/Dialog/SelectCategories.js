@@ -3,13 +3,21 @@ import DialogContentTemplate from "./DialogContentTemplate";
 import { Select, OutlinedInput, Box, Chip, MenuItem } from "@mui/material";
 import { MovieContext } from "../AddMovieDialog";
 import PropTypes from "prop-types";
+import { findCategoryName } from "./utils";
 
 const categories = [
-	"Do piwka",
-	"Samemu",
-	"Na zły humor",
-	"Z dziewczyną",
-	"Z kumplami",
+	{
+		id: "1",
+		name: "Do piwa",
+	},
+	{
+		id: "2",
+		name: "Na randke",
+	},
+	{
+		id: "3",
+		name: "Do oglądania samemu",
+	},
 ];
 
 const SelectCategories = ({ text }) => {
@@ -33,14 +41,14 @@ const SelectCategories = ({ text }) => {
 				renderValue={(selected) => (
 					<Box sx={{ display: "flex", flexWrap: "wrap", gap: 0.5 }}>
 						{selected.map((value) => (
-							<Chip key={value} label={value} />
+							<Chip key={value} label={findCategoryName(categories, value)} />
 						))}
 					</Box>
 				)}
 			>
-				{categories.map((categoryItem) => (
-					<MenuItem key={categoryItem} value={categoryItem}>
-						{categoryItem}
+				{categories.map(({ id, name }) => (
+					<MenuItem key={id} value={id}>
+						{name}
 					</MenuItem>
 				))}
 			</Select>
