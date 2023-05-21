@@ -39,6 +39,7 @@ const AddMovieDialog = ({ open, movie, onClose, t }) => {
 	};
 	const contextValue = useMemo(
 		() => ({ changePriority, changeDate, changeCategories }),
+		// eslint-disable-next-line react-hooks/exhaustive-deps
 		[]
 	);
 	return (
