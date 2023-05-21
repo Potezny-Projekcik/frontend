@@ -1,12 +1,12 @@
-import MoviesPanel from "../components/MoviesPanel/MoviesPanel";
+import MoviesPanel from "../components/Panels/MoviesPanel";
 import UIContainer from "./UIContainer";
 
 const MoviesPage = () => {
-	return (
-		<UIContainer>
-			<MoviesPanel></MoviesPanel>
-		</UIContainer>
-	);
+  return (
+    <UIContainer>
+      <MoviesPanel/>
+    </UIContainer>
+  );
 };
 
 export default MoviesPage;

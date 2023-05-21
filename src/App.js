@@ -6,6 +6,7 @@ import MoviesPage from "./Pages/MoviesPage";
 import LoginPage from "./Pages/LoginPage";
 import RegisterPage from "./Pages/RegisterPage";
 import CategoryMoviesPage from "./Pages/CategoryMoviesPage";
+import CategoriesPage from "./Pages/CategoriesPage";
 
 const App = () => {
   return (
@@ -15,7 +16,8 @@ const App = () => {
           <Route path="/movies" element={<MoviesPage />} />
           <Route path="/login" element={<LoginPage />} />
           <Route path="/register" element={<RegisterPage />} />
-          <Route path="/categorymovies" element={<CategoryMoviesPage />} />
+          <Route path="/categories/:id" element={<CategoryMoviesPage />} />
+          <Route path="/categories" element={<CategoriesPage />} />
         </Routes>
       </BrowserRouter>
     </I18nextProvider>

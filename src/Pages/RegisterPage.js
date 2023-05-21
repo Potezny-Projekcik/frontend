@@ -4,7 +4,7 @@ import UIContainer from "./UIContainer";
 const RegisterPage = () => {
 	return (
 		<UIContainer>
-			<Register></Register>
+			<Register/>
 		</UIContainer>
 	);
 };

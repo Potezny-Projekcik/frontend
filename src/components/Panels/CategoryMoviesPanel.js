@@ -13,11 +13,10 @@ const preventDefault = (event) => {
   event.preventDefault();
 };
 
-const CategoryMoviesPanel = () => {
+const CategoryMoviesPanel = ({category}) => {
   const { movies } = useMoviesFromFile("TestsJSON/sampleMovies.json");
   console.log(movies);
   const { t } = useTranslation("userMovie");
-  const category = "Do piwka";
   return (
     <Grid>
       <Title>User's movies - Category: {category}</Title>
