@@ -4,6 +4,8 @@ import { Select, MenuItem } from "@mui/material";
 import { getArrayOfPriorities } from "./utils";
 import { MovieContext } from "../AddMovieDialog";
 import { DEFAULT_PRIORITY, MAX_PRIORITY } from "../constants";
+import PropTypes from "prop-types";
+
 const SelectPriority = ({ text }) => {
 	const priorities = getArrayOfPriorities(MAX_PRIORITY);
 	const [priority, setPriority] = useState(DEFAULT_PRIORITY);
@@ -30,6 +32,10 @@ const SelectPriority = ({ text }) => {
 			</Select>
 		</DialogContentTemplate>
 	);
+};
+
+SelectPriority.propTypes = {
+	text: PropTypes.string.isRequired,
 };
 
 export default SelectPriority;

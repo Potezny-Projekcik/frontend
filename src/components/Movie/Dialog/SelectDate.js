@@ -4,6 +4,8 @@ import { LocalizationProvider, DatePicker } from "@mui/x-date-pickers";
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import dayjs from "dayjs";
 import { MovieContext } from "../AddMovieDialog";
+import PropTypes from "prop-types";
+
 const SelectDate = ({ text }) => {
 	const [date, setDate] = useState(dayjs);
 	const { changeDate } = useContext(MovieContext);
@@ -18,6 +20,10 @@ const SelectDate = ({ text }) => {
 			</LocalizationProvider>
 		</DialogContentTemplate>
 	);
+};
+
+SelectDate.propTypes = {
+	text: PropTypes.string.isRequired,
 };
 
 export default SelectDate;

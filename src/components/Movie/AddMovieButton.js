@@ -2,6 +2,7 @@ import { Button } from "@mui/material";
 import React from "react";
 import AddMovieDialog from "./AddMovieDialog";
 import { useTranslation } from "react-i18next";
+import PropTypes from "prop-types";
 
 const AddMovieButton = ({ movie }) => {
 	const [open, setOpen] = React.useState(false);
@@ -22,6 +23,10 @@ const AddMovieButton = ({ movie }) => {
 			<AddMovieDialog t={t} movie={movie} onClose={handleClose} open={open} />
 		</>
 	);
+};
+
+AddMovieButton.propTypes = {
+	movie: PropTypes.object.isRequired,
 };
 
 export default AddMovieButton;

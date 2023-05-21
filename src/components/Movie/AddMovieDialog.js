@@ -6,6 +6,7 @@ import SelectDate from "./Dialog/SelectDate";
 import SelectCategories from "./Dialog/SelectCategories";
 import { DEFAULT_PRIORITY } from "./constants";
 import { changeProperty } from "./Dialog/utils";
+import PropTypes from "prop-types";
 
 export const MovieContext = createContext();
 
@@ -44,6 +45,7 @@ const AddMovieDialog = ({ open, movie, onClose, t }) => {
 
 	const addMovie = () => {
 		console.log(movieToAdd);
+		onClose();
 	};
 	const contextValue = useMemo(
 		() => ({ changePriority, changeDate, changeCategories }),
@@ -71,6 +73,13 @@ const AddMovieDialog = ({ open, movie, onClose, t }) => {
 			</Dialog>
 		</MovieContext.Provider>
 	);
+};
+
+AddMovieDialog.propTypes = {
+	open: PropTypes.bool.isRequired,
+	movie: PropTypes.object.isRequired,
+	onClose: PropTypes.func.isRequired,
+	t: PropTypes.func.isRequired,
 };
 
 export default AddMovieDialog;

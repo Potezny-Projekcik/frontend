@@ -2,6 +2,8 @@ import React, { useState, useContext } from "react";
 import DialogContentTemplate from "./DialogContentTemplate";
 import { Select, OutlinedInput, Box, Chip, MenuItem } from "@mui/material";
 import { MovieContext } from "../AddMovieDialog";
+import PropTypes from "prop-types";
+
 const categories = [
 	"Do piwka",
 	"Samemu",
@@ -9,6 +11,7 @@ const categories = [
 	"Z dziewczyną",
 	"Z kumplami",
 ];
+
 const SelectCategories = ({ text }) => {
 	const [category, setCategory] = useState([]);
 	const { changeCategories } = useContext(MovieContext);
@@ -43,6 +46,10 @@ const SelectCategories = ({ text }) => {
 			</Select>
 		</DialogContentTemplate>
 	);
+};
+
+SelectCategories.propTypes = {
+	text: PropTypes.string.isRequired,
 };
 
 export default SelectCategories;
