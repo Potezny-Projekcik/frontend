@@ -33,4 +33,9 @@ const UncategorizedItem = ({name}) => {
     );
 };
 
+
+UncategorizedItem.propTypes = {
+    category: PropTypes.string,
+  };
+
 export default UncategorizedItem;
