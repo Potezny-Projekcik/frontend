@@ -3,8 +3,7 @@ import UIContainer from "./UIContainer";
 import { useParams } from "react-router-dom";
 
 const CategoryMoviesPage = () => {
-  const routeParams = useParams();
-  const {id} = routeParams;
+  const {id} = useParams();
   return (
     <UIContainer>
       <CategoryMoviesPanel category={id}/>
