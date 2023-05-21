@@ -5,6 +5,7 @@ import SelectPriority from "./Dialog/SelectPriority";
 import SelectDate from "./Dialog/SelectDate";
 import SelectCategories from "./Dialog/SelectCategories";
 import { DEFAULT_PRIORITY } from "./constants";
+import { changeProperty } from "./Dialog/utils";
 
 export const MovieContext = createContext();
 
@@ -20,20 +21,27 @@ const AddMovieDialog = ({ open, movie, onClose, t }) => {
 	};
 
 	const changePriority = (priority) => {
-		movieToAdd.priority = priority;
-		const movieToSet = movieToAdd;
-		setMovieToAdd(movieToSet);
+		changeProperty({
+			key: "priority",
+			property: priority,
+			movieToAdd,
+			setMovieToAdd,
+		});
 	};
+
 	const changeDate = (date) => {
-		movieToAdd.date = date;
-		const movieToSet = movieToAdd;
-		setMovieToAdd(movieToSet);
+		changeProperty({ key: "date", property: date, movieToAdd, setMovieToAdd });
 	};
+
 	const changeCategories = (categories) => {
-		movieToAdd.categories = categories;
-		const movieToSet = movieToAdd;
-		setMovieToAdd(movieToSet);
+		changeProperty({
+			key: "categories",
+			property: categories,
+			movieToAdd,
+			setMovieToAdd,
+		});
 	};
+
 	const addMovie = () => {
 		console.log(movieToAdd);
 	};
