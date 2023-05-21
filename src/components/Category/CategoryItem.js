@@ -14,7 +14,7 @@ import { Link } from "react-router-dom";
 const CategoryItem = ({ category }) => {
   const { id, name } = category;
   return (
-    <ListItem
+    <ListItem key={id}
       secondaryAction={
         <IconButton edge="end" aria-label="delete">
           <DeleteIcon />
@@ -32,6 +32,7 @@ const CategoryItem = ({ category }) => {
     </ListItem>
   );
 };
+
 
 CategoryItem.propTypes = {
   category: PropTypes.object,

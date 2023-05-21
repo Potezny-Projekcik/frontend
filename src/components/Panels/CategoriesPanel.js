@@ -6,12 +6,12 @@ import { useTranslation } from "react-i18next";
 import CategoryItem from "../Category/CategoryItem";
 import useCategoriesFromFile from "../../hooks/useCategoriesFromFile";
 import { useState } from "react";
+import UncategorizedItem from "../Category/UncategorizedItem";
 
 const CategoriesPanel = () => {
   const { categories } = useCategoriesFromFile(
     "TestsJSON/sampleCategories.json"
   );
-  console.log(categories);
   const { t } = useTranslation("userCategory");
   const [dense, setDense] = useState(false);
   return (
@@ -20,6 +20,8 @@ const CategoriesPanel = () => {
         {`${t("title")}`}
       </Typography>
       <List dense={dense}>
+        <UncategorizedItem name={`${t("allMovies")}`} />
+        <UncategorizedItem name={`${t("uncategorized")}`}/>
         {categories.map((category) => (
           <CategoryItem category={category} />
         ))}
