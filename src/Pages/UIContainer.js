@@ -1,10 +1,14 @@
 import React from "react";
-import LanguageSwitcher from "../components/LanguageSwitcher/LanguageSwitcher";
+import NavBar from "../components/Navbar/Navbar";
+import "./UIContainer-Style.css";
 
 const UIContainer = ({ children }) => {
 	return <>
-	<LanguageSwitcher />
-	{children}</>;
+	<NavBar />
+	<div className="page-content">
+	{children}
+    </div>
+	</>;
 };
 
 export default UIContainer;

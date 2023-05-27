@@ -11,7 +11,7 @@ function LanguageListItem({ langCode}) {
   }
   return (
     <ListItemButton
-      sx={{ pl: 4, bgcolor: '#b3e5fc' }}
+      sx={{ pl: 4, bgcolor: 'white' }}
       onClick={() => handleLanguageChange(langCode)}
     >
       <ListItemText
