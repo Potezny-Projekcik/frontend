@@ -59,7 +59,7 @@ export const useMovies = () => {
 		} catch (err) {
 			console.error(err);
 		}
-	}, [movies, moviesAmount]);
+	}, [moviesAmount]);
 
 	const handleScroll = useCallback(() => {
 		const { scrollY, innerHeight } = window;

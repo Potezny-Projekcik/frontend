@@ -12,6 +12,9 @@ import userMoviePl from "../translations/pl/userMovie.json";
 import userCategoryEn from "../translations/en/userCategory.json";
 import userCategoryPl from "../translations/pl/userCategory.json";
 
+import LanguageSwitcherEn from "../translations/en/LanguageSwitcher.json";
+import LanguageSwitcherPl from "../translations/pl/LanguageSwitcher.json"
+
 const resources = {
 	en: {
 		movie: movieEn,
@@ -19,6 +22,7 @@ const resources = {
 		register: registerEn,
 		userMovie: userMovieEn,
 		userCategory: userCategoryEn,
+		LanguageSwitcher: LanguageSwitcherEn
 	},
 	pl: {
 		movie: moviePl,
@@ -26,6 +30,7 @@ const resources = {
 		register: registerPl,
 		userMovie: userMoviePl,
 		userCategory: userCategoryPl,
+		LanguageSwitcher: LanguageSwitcherPl
 	},
 };
 
