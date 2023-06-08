@@ -7,6 +7,9 @@ import loginEn from "../translations/en/login.json";
 import loginPl from "../translations/pl/login.json";
 import registerEn from "../translations/en/register.json";
 import registerPl from "../translations/pl/register.json";
+import addMoviePl from "../translations/pl/addMovie.json";
+import addMovieEn from "../translations/en/addMovie.json";
+
 import userMovieEn from "../translations/en/userMovie.json";
 import userMoviePl from "../translations/pl/userMovie.json";
 import userCategoryEn from "../translations/en/userCategory.json";
@@ -21,6 +24,7 @@ const resources = {
 		movie: movieEn,
 		login: loginEn,
 		register: registerEn,
+		addMovie: addMovieEn,
 		navbar: navbarEn,
 		userMovie: userMovieEn,
 		userCategory: userCategoryEn,
@@ -30,6 +34,7 @@ const resources = {
 		movie: moviePl,
 		login: loginPl,
 		register: registerPl,
+		addMovie: addMoviePl,
 		navbar: navbarPl,
 		userMovie: userMoviePl,
 		userCategory: userCategoryPl,
