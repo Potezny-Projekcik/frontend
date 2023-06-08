@@ -1,14 +1,14 @@
 import React from "react";
 import NavBar from "../components/Navbar/Navbar";
-import "./UIContainer-Style.css";
+import { PageContent } from "./styles";
 
 const UIContainer = ({ children }) => {
-	return <>
-	<NavBar />
-	<div className="page-content">
-	{children}
-    </div>
-	</>;
+	return (
+		<>
+			<NavBar />
+			<PageContent>{children}</PageContent>
+		</>
+	);
 };
 
 export default UIContainer;
