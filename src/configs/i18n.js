@@ -11,26 +11,29 @@ import userMovieEn from "../translations/en/userMovie.json";
 import userMoviePl from "../translations/pl/userMovie.json";
 import userCategoryEn from "../translations/en/userCategory.json";
 import userCategoryPl from "../translations/pl/userCategory.json";
-
 import LanguageSwitcherEn from "../translations/en/LanguageSwitcher.json";
-import LanguageSwitcherPl from "../translations/pl/LanguageSwitcher.json"
+import LanguageSwitcherPl from "../translations/pl/LanguageSwitcher.json";
+import navbarEn from "../translations/en/navbar.json";
+import navbarPl from "../translations/pl/navbar.json";
 
 const resources = {
 	en: {
 		movie: movieEn,
 		login: loginEn,
 		register: registerEn,
+		navbar: navbarEn,
 		userMovie: userMovieEn,
 		userCategory: userCategoryEn,
-		LanguageSwitcher: LanguageSwitcherEn
+		LanguageSwitcher: LanguageSwitcherEn,
 	},
 	pl: {
 		movie: moviePl,
 		login: loginPl,
 		register: registerPl,
+		navbar: navbarPl,
 		userMovie: userMoviePl,
 		userCategory: userCategoryPl,
-		LanguageSwitcher: LanguageSwitcherPl
+		LanguageSwitcher: LanguageSwitcherPl,
 	},
 };
 
