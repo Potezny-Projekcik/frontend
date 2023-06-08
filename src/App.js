@@ -9,19 +9,20 @@ import CategoryMoviesPage from "./Pages/CategoryMoviesPage";
 import CategoriesPage from "./Pages/CategoriesPage";
 
 const App = () => {
-  return (
-    <I18nextProvider i18n={i18next}>
-      <BrowserRouter>
-        <Routes>
-          <Route path="/movies" element={<MoviesPage />} />
-          <Route path="/login" element={<LoginPage />} />
-          <Route path="/register" element={<RegisterPage />} />
-          <Route path="/categories/:id" element={<CategoryMoviesPage />} />
-          <Route path="/categories" element={<CategoriesPage />} />
-        </Routes>
-      </BrowserRouter>
-    </I18nextProvider>
-  );
+	return (
+		<I18nextProvider i18n={i18next}>
+			<BrowserRouter>
+				<Routes>
+					<Route path="/" element={<LoginPage />} />
+					<Route path="/movies" element={<MoviesPage />} />
+					<Route path="/login" element={<LoginPage />} />
+					<Route path="/register" element={<RegisterPage />} />
+					<Route path="/categories/:id" element={<CategoryMoviesPage />} />
+					<Route path="/categories" element={<CategoriesPage />} />
+				</Routes>
+			</BrowserRouter>
+		</I18nextProvider>
+	);
 };
 
 export default App;

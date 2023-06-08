@@ -1,6 +1,5 @@
 {
-    "language": "Język",
-    "english":  "Angielski",
-    "polish": "Polski"
-
+	"language": "Język",
+	"en": "Angielski",
+	"pl": "Polski"
 }
