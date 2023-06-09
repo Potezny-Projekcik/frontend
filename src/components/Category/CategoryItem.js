@@ -1,4 +1,5 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import PropTypes from "prop-types";
 import ListItem from "@mui/material/ListItem";
 import FolderIcon from "@mui/icons-material/Folder";
@@ -9,33 +10,38 @@ import Avatar from "@mui/material/Avatar";
 import ListItemAvatar from "@mui/material/ListItemAvatar";
 import { Button } from "@mui/material";
 import { Link } from "react-router-dom";
-
+import axios from "axios";
 
 const CategoryItem = ({ category }) => {
-  const { id, name } = category;
-  return (
-    <ListItem key={id}
-      secondaryAction={
-        <IconButton edge="end" aria-label="delete">
-          <DeleteIcon />
-        </IconButton>
-      }
-    >
-      <Button component={Link} to={name}>
-        <ListItemAvatar>
-         <Avatar>
-            <FolderIcon />
-          </Avatar>
-        </ListItemAvatar>
-        <ListItemText primary={name} />
-      </Button>
-    </ListItem>
-  );
+	const { categoryid, categoryname } = category;
+	const navigate = useNavigate();
+	const handleDeleteButton = async () => {
+		await axios.delete(`http://127.0.0.1:8000/api/category/${categoryid}/`);
+		navigate(0);
+	};
+	return (
+		<ListItem
+			key={categoryid}
+			secondaryAction={
+				<IconButton edge="end" aria-label="delete">
+					<DeleteIcon onClick={handleDeleteButton} />
+				</IconButton>
+			}
+		>
+			<Button component={Link} to={categoryname}>
+				<ListItemAvatar>
+					<Avatar>
+						<FolderIcon />
+					</Avatar>
+				</ListItemAvatar>
+				<ListItemText primary={categoryname} />
+			</Button>
+		</ListItem>
+	);
 };
 
-
 CategoryItem.propTypes = {
-  category: PropTypes.object,
+	category: PropTypes.object,
 };
 
 export default CategoryItem;

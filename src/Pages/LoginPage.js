@@ -4,7 +4,7 @@ import UIContainer from "./UIContainer";
 const LoginPage = () => {
 	return (
 		<UIContainer>
-			<Login/>
+			<Login />
 		</UIContainer>
 	);
 };

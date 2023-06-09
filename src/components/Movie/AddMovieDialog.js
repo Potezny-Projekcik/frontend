@@ -7,6 +7,7 @@ import SelectCategories from "./Dialog/SelectCategories";
 import { DEFAULT_PRIORITY } from "./constants";
 import { changeProperty } from "./Dialog/utils";
 import PropTypes from "prop-types";
+import axios from "axios";
 
 export const MovieContext = createContext();
 
@@ -43,8 +44,54 @@ const AddMovieDialog = ({ open, movie, onClose, t }) => {
 		});
 	};
 
-	const addMovie = () => {
-		console.log(movieToAdd);
+	const addMovie = async () => {
+		try {
+			console.log(movieToAdd.categories);
+			const movieToPost = {
+				title: movie.title,
+				genre: movie.genres[0].name,
+				countryoforigin: movie.production_countries[0].name,
+				productionyear: movie.release_date.slice(0, 10),
+			};
+			const response = await axios.post(
+				"http://127.0.0.1:8000/api/movie/",
+				movieToPost
+			);
+			const movieid = await response.data.movieid;
+			console.log(movieToAdd.date);
+			const date = `${movieToAdd.date.$y}-${movieToAdd.date.$M + 1}-${
+				movieToAdd.date.$D
+			}`;
+			const userMovieToPost = {
+				movieid,
+				userid: 1,
+				sessionpriority: movieToAdd.priority,
+				sessiondate: date,
+			};
+			console.log(JSON.stringify(userMovieToPost));
+
+			const res2 = await axios.post(
+				"http://127.0.0.1:8000/api/usermovies/",
+				userMovieToPost
+			);
+			console.log(res2);
+			const usermovieid = await res2.data.usermovieid;
+
+			for (const category of movieToAdd.categories) {
+				const movieCategory = {
+					usermovieid,
+					categoryid: category,
+				};
+				console.log(JSON.stringify(movieCategory));
+				await axios.post(
+					"http://127.0.0.1:8000/api/moviecategory/",
+					movieCategory
+				);
+			}
+		} catch (error) {
+			console.error(error);
+		}
+
 		onClose();
 	};
 	const contextValue = useMemo(
