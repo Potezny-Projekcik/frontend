@@ -28,7 +28,7 @@ const CategoryItem = ({ category }) => {
 				</IconButton>
 			}
 		>
-			<Button component={Link} to={categoryname}>
+			<Button component={Link} to={`${categoryid}`}>
 				<ListItemAvatar>
 					<Avatar>
 						<FolderIcon />

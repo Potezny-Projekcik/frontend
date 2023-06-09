@@ -11,6 +11,7 @@ const CategoriesPanel = () => {
 	const { categories } = useCategoriesFromFile(
 		"http://127.0.0.1:8000/api/category/"
 	);
+	console.log(categories);
 	const { t } = useTranslation("userCategory");
 	const [dense, setDense] = useState(false);
 	return (
@@ -19,7 +20,7 @@ const CategoriesPanel = () => {
 				{`${t("title")}`}
 			</Typography>
 			<List dense={dense}>
-				<UncategorizedItem name={`${t("allMovies")}`} />
+				{/* <UncategorizedItem name={`${t("allMovies")}`} /> */}
 				{/* <UncategorizedItem name={`${t("uncategorized")}`} /> */}
 				{categories.map((category) => (
 					<CategoryItem category={category} />

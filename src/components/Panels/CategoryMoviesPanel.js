@@ -10,7 +10,10 @@ import Title from "../Movie/Title";
 import { useTranslation } from "react-i18next";
 
 const CategoryMoviesPanel = ({ category }) => {
-	const { movies } = useMoviesFromFile("http://127.0.0.1:8000/api/usermovies/");
+	const { movies } = useMoviesFromFile(
+		`http://127.0.0.1:8000/api/usermovies/get-movies-by-category/${category}/`
+	);
+	console.log(movies);
 	const { t } = useTranslation("userMovie");
 	return (
 		<Grid>
