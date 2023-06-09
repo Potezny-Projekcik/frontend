@@ -4,25 +4,15 @@ import { Select, OutlinedInput, Box, Chip, MenuItem } from "@mui/material";
 import { MovieContext } from "../AddMovieDialog";
 import PropTypes from "prop-types";
 import { findCategoryName } from "./utils";
-
-const categories = [
-	{
-		id: "1",
-		name: "Do piwa",
-	},
-	{
-		id: "2",
-		name: "Na randke",
-	},
-	{
-		id: "3",
-		name: "Do oglądania samemu",
-	},
-];
+import useCategoriesFromFile from "../../../hooks/useCategoriesFromFile";
 
 const SelectCategories = ({ text }) => {
 	const [category, setCategory] = useState([]);
 	const { changeCategories } = useContext(MovieContext);
+	const { categories } = useCategoriesFromFile(
+		"http://127.0.0.1:8000/api/category/"
+	);
+	console.log(categories);
 	const handleChange = (event) => {
 		const {
 			target: { value },
@@ -46,9 +36,9 @@ const SelectCategories = ({ text }) => {
 					</Box>
 				)}
 			>
-				{categories.map(({ id, name }) => (
-					<MenuItem key={id} value={id}>
-						{name}
+				{categories.map(({ categoryid, categoryname }) => (
+					<MenuItem key={categoryid} value={categoryid}>
+						{categoryname}
 					</MenuItem>
 				))}
 			</Select>

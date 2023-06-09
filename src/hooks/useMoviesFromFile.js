@@ -22,7 +22,6 @@ const useMoviesFromFile = (url) => {
 				moviesFromApi.push(movie);
 			}
 
-			console.log(moviesFromApi);
 			setMovies(moviesFromApi);
 		} catch (err) {
 			console.error(err);

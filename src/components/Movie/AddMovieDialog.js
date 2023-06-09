@@ -45,6 +45,7 @@ const AddMovieDialog = ({ open, movie, onClose, t }) => {
 	};
 
 	const addMovie = async () => {
+		let response;
 		try {
 			console.log(movieToAdd.categories);
 			const movieToPost = {
@@ -53,10 +54,15 @@ const AddMovieDialog = ({ open, movie, onClose, t }) => {
 				countryoforigin: movie.production_countries[0].name,
 				productionyear: movie.release_date.slice(0, 10),
 			};
-			const response = await axios.post(
+			response = await axios.post(
 				"http://127.0.0.1:8000/api/movie/",
 				movieToPost
 			);
+		} catch (error) {
+			console.error(error);
+		}
+
+		try {
 			const movieid = await response.data.movieid;
 			console.log(movieToAdd.date);
 			const date = `${movieToAdd.date.$y}-${movieToAdd.date.$M + 1}-${

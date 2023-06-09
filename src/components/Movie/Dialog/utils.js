@@ -9,6 +9,8 @@ export const changeProperty = ({ key, value, movieToAdd, setMovieToAdd }) => {
 };
 
 export const findCategoryName = (categories, idToFind) => {
-	const foundCategory = categories.find(({ id }) => id === idToFind);
-	return foundCategory.name;
+	const foundCategory = categories.find(
+		({ categoryid }) => categoryid === idToFind
+	);
+	return foundCategory.categoryname;
 };
