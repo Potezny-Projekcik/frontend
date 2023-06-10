@@ -9,6 +9,7 @@ import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
 import { DatePicker } from "@mui/x-date-pickers/DatePicker";
 import dayjs from "dayjs";
+import axios from "axios";
 
 const Register = () => {
   const [firstName, setFirstName] = useState("");
@@ -39,6 +40,33 @@ const Register = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
+    console.log(date);
+			const date1 = `${date.$y}-${date.$M + 1}-${date.$D}`;
+    axios
+      .post(
+        "http://127.0.0.1:8000/api/user/",
+        {
+          firstname: firstName,
+          lastname: lastName,
+          username: email,
+          birthdate: date1,
+          isadmin: false,
+          password: pswd,
+          last_login: null
+
+        },
+        {
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      )
+      .then(function (response) {
+        console.log(response);
+        window.location.href =  "/login";
+      })
+      .catch(function (error) {
+      });
   };
 
   const { t } = useTranslation("register");
