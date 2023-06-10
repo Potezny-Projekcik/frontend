@@ -8,6 +8,8 @@ import { useTranslation } from "react-i18next";
 
 const NavBar = () => {
 	const { t } = useTranslation("navbar");
+	const token = sessionStorage.getItem("accessToken");
+
 	return (
 		<Navbar
 			className="navbar bg-white fixed-top"
@@ -35,7 +37,7 @@ const NavBar = () => {
 							<LanguageListItem langCode="pl" />
 						</NavDropdown.Item>
 					</NavDropdown>
-					<Nav.Link href="/login">
+					<Nav.Link href={token ? "/logout":"/login"}>
 						<LoginIcon /> {t("login")}
 					</Nav.Link>
 				</Nav>

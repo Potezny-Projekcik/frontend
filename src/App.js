@@ -7,18 +7,25 @@ import LoginPage from "./Pages/LoginPage";
 import RegisterPage from "./Pages/RegisterPage";
 import CategoryMoviesPage from "./Pages/CategoryMoviesPage";
 import CategoriesPage from "./Pages/CategoriesPage";
+import RouterGuard from "./hooks/RouterGuard";
+import LogoutPage from "./Pages/LogoutPage";
+
 
 const App = () => {
+	const removeToken = () => {
+		sessionStorage.removeItem("accessToken");
+	}
 	return (
 		<I18nextProvider i18n={i18next}>
 			<BrowserRouter>
 				<Routes>
 					<Route path="/" element={<LoginPage />} />
-					<Route path="/movies" element={<MoviesPage />} />
+					<Route path="/movies" element={<RouterGuard><MoviesPage /></RouterGuard>} />
 					<Route path="/login" element={<LoginPage />} />
 					<Route path="/register" element={<RegisterPage />} />
 					<Route path="/categories/:id" element={<CategoryMoviesPage />} />
 					<Route path="/categories" element={<CategoriesPage />} />
+					<Route path="/logout" element={<LogoutPage/>} />
 				</Routes>
 			</BrowserRouter>
 		</I18nextProvider>
