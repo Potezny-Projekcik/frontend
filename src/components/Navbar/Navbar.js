@@ -12,9 +12,10 @@ const NavBar = () => {
 
 	return (
 		<Navbar
-			className="navbar bg-white fixed-top"
+			className="navbar fixed-top"
 			data-bs-theme="dark"
 			expand="lg"
+			style={{color: "black"}}
 		>
 			<Navbar.Toggle aria-controls="navbarSupportedContent" />
 			<Navbar.Collapse id="navbarSupportedContent">
