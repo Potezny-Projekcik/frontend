@@ -38,7 +38,7 @@ const NavBar = () => {
 						</NavDropdown.Item>
 					</NavDropdown>
 					<Nav.Link href={token ? "/logout":"/login"}>
-						<LoginIcon /> {t("login")}
+						<LoginIcon /> {token ? t("logout"):t("login")}
 					</Nav.Link>
 				</Nav>
 			</Navbar.Collapse>

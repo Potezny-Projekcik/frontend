@@ -23,8 +23,8 @@ const App = () => {
 					<Route path="/movies" element={<RouterGuard><MoviesPage /></RouterGuard>} />
 					<Route path="/login" element={<LoginPage />} />
 					<Route path="/register" element={<RegisterPage />} />
-					<Route path="/categories/:id" element={<CategoryMoviesPage />} />
-					<Route path="/categories" element={<CategoriesPage />} />
+					<Route path="/categories/:id" element={<RouterGuard><CategoryMoviesPage /></RouterGuard>} />
+					<Route path="/categories" element={<RouterGuard><CategoriesPage /></RouterGuard>} />
 					<Route path="/logout" element={<LogoutPage/>} />
 				</Routes>
 			</BrowserRouter>

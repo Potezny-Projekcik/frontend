@@ -4,5 +4,6 @@
 	"categories": "Kategorie",
 	"all movie categories": "Wszytkie kategorie filmów",
 	"home": "Strona główna",
-	"movies": "Filmy"
+	"movies": "Filmy",
+    "logout": "Wyloguj"
 }
